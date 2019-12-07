@@ -1,11 +1,25 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { DummyComponent, SwapiComponent } from './components';
+import { SwapiResolver } from './resolvers';
 
-
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    component: DummyComponent,
+    children: [
+      {
+        path: 'swapi',
+        component: SwapiComponent,
+        resolve: [SwapiResolver],
+      },
+    ],
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [SwapiResolver],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
