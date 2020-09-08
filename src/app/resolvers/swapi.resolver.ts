@@ -8,6 +8,6 @@ import { tap } from 'rxjs/operators';
 export class SwapiResolver implements Resolve<any> {
   constructor(private http: HttpClient) {}
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
-    return this.http.get('https://swapi.co/api/people/1').pipe(tap(console.log));
+    return this.http.get('https://swapi.dev/api/people/1').pipe(tap(console.log));
   }
 }
