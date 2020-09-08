@@ -13,7 +13,8 @@
     "dev:ssr": "ng run angular-universal:serve-ssr",
     "serve:ssr": "node dist/server/main.js",
     "build:ssr": "ng build --prod && ng run angular-universal:server:production",
-    "prerender": "ng run angular-universal:prerender"
+    "prerender": "ng run angular-universal:prerender",
+    "postinstall": "ngcc"
   },
   "private": true,
   "dependencies": {
