@@ -36,7 +36,7 @@ export class ServerStateInterceptor implements HttpInterceptor {
     }
 
     return next.handle(req).pipe(
-      tap(event => {
+      tap((event) => {
         if (event instanceof HttpResponse && isPlatformServer(this.platform)) {
           this.transferState.set(makeStateKey(req.url), event.body);
           // Memory cache on server side

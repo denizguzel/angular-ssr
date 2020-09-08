@@ -6,6 +6,12 @@ import { SwapiResolver } from './resolvers';
 const routes: Routes = [
   {
     path: '',
+    pathMatch: 'full',
+    redirectTo: 'swapi',
+  },
+
+  {
+    path: '',
     component: DummyComponent,
     children: [
       {
@@ -18,9 +24,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {
-    initialNavigation: 'enabled'
-})],
+  imports: [
+    RouterModule.forRoot(routes, {
+      initialNavigation: 'enabled',
+    }),
+  ],
   exports: [RouterModule],
   providers: [SwapiResolver],
 })

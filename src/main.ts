@@ -13,5 +13,5 @@ document.addEventListener('DOMContentLoaded', () => {
     .bootstrapModule(AppModule, {
       defaultEncapsulation: ViewEncapsulation.None,
     })
-    .catch(err => console.error(err));
+    .catch((err) => console.error(err));
 });
